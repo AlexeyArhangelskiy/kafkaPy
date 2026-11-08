@@ -6,4 +6,15 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "kafka-python>=3.0.13",
+    "httpx (>=0.28.1,<0.29.0)",
+    "pytest (>=9.2.0,<10.0.0)",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["test"]
+log_cli = true
+log_cli_level = "INFO"
+log_cli_format = "%(asctime)s %(levelname)s %(name)s: %(message)s"
+log_cli_date_format = "%H:%M:%S"
+filterwarnings = ["ignore::DeprecationWarning"]
